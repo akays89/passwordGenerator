@@ -15,7 +15,7 @@ function writePassword() {
 
 var specialChars = [
   '@', '%','+','\\', '/', "'",'!','#','$','^','?',':',',',')','(','}','{', ']', '[', '~','-','_','.',];
-var numericChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var numberChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var lowerCasedChars = [  'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var upperCasedChars = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',];
 var chars = '';
@@ -27,7 +27,29 @@ if (passLength === null){}
 else if (isNaN(parseInt(passLength)) || isNaN(passLength) || parseInt(passLength) < 8 || parseInt(passLength) > 128) {
   alert("This is not a valid password length. Please choose a number between 8 and 128")
 }
+else{
+  var upperCaseCon = confirm("Would you like uppercase characters in your password?");
+  if(upperCaseCon){
+    chars = chars + upperCasedChars
+  }
 
+  var lowerCaseCon = confirm("Would you like lowercase characters in your password?");
+  if(lowerCaseCon){
+    chars = chars + upperCasedChars
+  }
+
+  var specialCon = confirm("Would you like Special characters in your password?");
+  if(specialCon){
+    chars = chars + specialChars
+  }
+  
+  var numberCon = confirm("Would you like numbers in your");
+  if(numberCon){
+    chars = chars + numberChars
+  }
+
+
+}
 
 
 
