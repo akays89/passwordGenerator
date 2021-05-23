@@ -12,12 +12,28 @@ function writePassword() {
   passwordText.value = password;
 
 }
+function mixChars(charMix){
+  
+  charMix = charMix.split('');
+  var n = charMix.length;
+  for (var i = n-1; i>0; i--)
+  {
+    var j = Math.floor(Math.random() * (i+1));
+    var tmp = charMix[i];
+    charMix[i] = charMix[j];
+    charMix[j] = tmp;
+  }
+  
+  return charMix.join("");
+  
+  }
+function generatePassword(){
 
-var specialChars = [
-  '@', '%','+','\\', '/', "'",'!','#','$','^','?',':',',',')','(','}','{', ']', '[', '~','-','_','.',];
-var numberChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var lowerCasedChars = [  'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var upperCasedChars = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',];
+var specialChars = ["!", "#", "$", "%", "&", "'" ,"*", "+", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@"];
+ 
+var numberChars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var lowerCasedChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upperCasedChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var chars = '';
 var passw = '';
 
@@ -43,13 +59,42 @@ else{
     chars = chars + specialChars
   }
   
-  var numberCon = confirm("Would you like numbers in your");
+  var numberCon = confirm("Would you like numbers in your password?");
   if(numberCon){
     chars = chars + numberChars
   }
 
+  if (chars != ''){
+    
+  chars = mixChars(chars);
+ 
 
-}
+  for (var i=0; i<passLength; i++){
+    var randomnum = Math.floor(Math.random() * chars.length);
+    passw += chars.substring(randomnum,randomnum+1);
+
+    
+  
+  }
+  }
+  else{
+    alert("please choose characters");
+  }
+
+  }
+
+  return passw;
+  }
+
+
+ 
+
+
+
+
+
+
+
 
 
 
