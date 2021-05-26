@@ -1,4 +1,6 @@
-// Assignment Code
+
+
+ // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
@@ -12,24 +14,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-function generatePassword(){
-
-
-  var specialChars = ["!", "#", "$", "%", "&", "'" ,"*", "+", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@"];
-
-  var numberChars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-
-  var lowerCasedChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  
-  var upperCasedChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
-
-  var chars = '';
-  var passw = '';
-
-
-function mixChars(charMix){   
+function mixChars(charMix){
   
   charMix = charMix.split('');
   var n = charMix.length;
@@ -44,7 +29,15 @@ function mixChars(charMix){
   return charMix.join("");
   
   }
+function generatePassword(){
 
+var specialChars = ["!", "#", "$", "%", "&", "'" ,"*", "+", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@"];
+ 
+var numberChars = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var lowerCasedChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upperCasedChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var chars = '';
+var passw = '';
 
 var passLength = prompt("Please enter your desired password length. The password can have a minimun of 8 and a maximum of 128 characters");
 
@@ -53,24 +46,24 @@ else if (isNaN(parseInt(passLength)) || isNaN(passLength) || parseInt(passLength
   alert("This is not a valid password length. Please choose a number between 8 and 128")
 }
 else{
-  var upperCasedCon = confirm("Would you like uppercase characters in your password?");
-  if(upperCasedCon){
-    chars = upperCasedChars.concat(chars)
+  var upperCaseCon = confirm("Would you like uppercase characters in your password?");
+  if(upperCaseCon){
+    chars = chars + upperCasedChars
   }
 
-  var lowerCasedCon = confirm("Would you like lowercase characters in your password?");
-  if(lowerCasedCon){
-    chars = lowerCasedChars.concat(chars)
+  var lowerCaseCon = confirm("Would you like lowercase characters in your password?");
+  if(lowerCaseCon){
+    chars = chars + upperCasedChars
   }
 
   var specialCon = confirm("Would you like Special characters in your password?");
   if(specialCon){
-    chars = specialChars.concat(chars)
+    chars = chars + specialChars
   }
   
   var numberCon = confirm("Would you like numbers in your password?");
   if(numberCon){
-    chars = numberChars.concat(chars)
+    chars = chars + numberChars
   }
 
   if (chars != ''){
@@ -94,9 +87,6 @@ else{
 
   return passw;
   }
-
-
- 
 
 
 
