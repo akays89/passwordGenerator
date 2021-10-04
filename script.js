@@ -39,7 +39,11 @@ if (isNaN(input === true)) {
    return;
  }
 
- 
+if (input > 128) {
+  alert("The password must be less than 129 characters")
+  return;
+}
+
 
 }
 
