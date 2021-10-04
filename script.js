@@ -1,4 +1,4 @@
-let enter;
+let input;
 
 const specialChars = ["!", "#", "$", "%", "&", "'" ,"*", "+", "-", ".", "/", ":", ";", "<", ">", "=", "?", "@"];
  
@@ -28,12 +28,18 @@ function generatePassword(){
 
 
 
-let enter = parseInt(prompt("Please enter your desired password length. The password can have a minimum of 8 and a maximum of 128 characters"));
+let input = parseInt(prompt("Please enter your desired password length. The password can have a minimum of 8 and a maximum of 128 characters"));
 
-if (isNaN(enter === true)) {
+if (isNaN(input === true)) {
   alert("Value must be a number");
   return
 }
+ if (input < 8) {
+   alert("The password must be at least 8 characters")
+   return;
+ }
+
+ 
 
 }
 
