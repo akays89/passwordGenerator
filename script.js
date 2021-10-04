@@ -53,7 +53,13 @@ const confirmUppercase = confirm("Select OK if you'd like to include uppercase l
 const confirmLowercase = confirm("Select OK if you'd like to include lowercase letters in your password.");
 
 
-
+const passwordOptions = {
+  input: input,
+  confirmNumber: confirmNum,
+  confirmUppercase: confirmUppercase,
+  confirmLowercase: confirmLowercase, 
+  confirmCharacter:confirmChar
+  };
 
  
 
