@@ -28,19 +28,19 @@ function generatePassword(){
 
 
 
-let input = parseInt(prompt("Please enter your desired password length. The password can have a minimum of 8 and a maximum of 128 characters"));
+let input = parseInt(prompt("Please enter your desired password length. The password can have a minimum of 8 and a maximum of 128 characters."));
 
 if (isNaN(input === true)) {
-  alert("Value must be a number");
+  alert("Value must be a number!");
   return
 }
  if (input < 8) {
-   alert("The password must be at least 8 characters")
+   alert("The password must be at least 8 characters!")
    return;
  }
 
 if (input > 128) {
-  alert("The password must be less than 129 characters")
+  alert("The password must be less than 129 characters!")
   return;
 }
 
@@ -49,6 +49,8 @@ if (input > 128) {
 
 const confirmNum = confirm("Select OK if you'd like to include numbers in your password.");
 const confirmChar = confirm("Select OK if you'd like to include special characters in your password.");
+const confirmUppercase = confirm("Select OK if you'd like to include uppercase letters in your password.");
+
 
 
  
