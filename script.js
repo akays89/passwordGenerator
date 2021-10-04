@@ -28,54 +28,15 @@ function generatePassword(){
 
 
 
-var enter = parseInt(prompt("Please enter your desired password length. The password can have a minimun of 8 and a maximum of 128 characters"));
+let enter = parseInt(prompt("Please enter your desired password length. The password can have a minimum of 8 and a maximum of 128 characters"));
 
-if (passLength === null){}
-else if (isNaN(parseInt(passLength)) || isNaN(passLength) || parseInt(passLength) < 8 || parseInt(passLength) > 128) {
-  alert("This is not a valid password length. Please choose a number between 8 and 128")
+if (isNaN(enter === true)) {
+  alert("Value must be a number");
+  return
 }
-else{
-  var upperCaseCon = confirm("Would you like uppercase characters in your password?");
-  if(upperCaseCon){
-    chars = chars + upperCasedChars
-  }
 
-  var lowerCaseCon = confirm("Would you like lowercase characters in your password?");
-  if(lowerCaseCon){
-    chars = chars + lowerCasedChars
-  }
+}
 
-  var specialCon = confirm("Would you like Special characters in your password?");
-  if(specialCon){
-    chars = chars + specialChars
-  }
-  
-  var numberCon = confirm("Would you like numbers in your password?");
-  if(numberCon){
-    chars = chars + numberChars
-  }
-
-  if (chars != ''){
-    
-  chars = mixChars(chars);
- 
-
-  for (var i=0; i<passLength; i++){
-    var randomnum = Math.floor(Math.random() * chars.length);
-    passw += chars.substring(randomnum,randomnum+1);
-
-    
-  
-  }
-  }
-  else{
-    alert("please choose characters");
-  }
-
-  }
-
-  return passw;
-  }
 
 
 
