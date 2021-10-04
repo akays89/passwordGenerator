@@ -50,6 +50,8 @@ if (input > 128) {
 const confirmNum = confirm("Select OK if you'd like to include numbers in your password.");
 const confirmChar = confirm("Select OK if you'd like to include special characters in your password.");
 const confirmUppercase = confirm("Select OK if you'd like to include uppercase letters in your password.");
+const confirmLowercase = confirm("Select OK if you'd like to include lowercase letters in your password.");
+
 
 
 
