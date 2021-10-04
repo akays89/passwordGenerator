@@ -5,7 +5,7 @@ const specialChars = ["!", "#", "$", "%", "&", "'" ,"*", "+", "-", ".", "/", ":"
 const numberChars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const lowerCasedChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const upperCasedChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-const choices;
+let choices;
 const password = [];
 
  
@@ -55,13 +55,31 @@ const confirmLowercase = confirm("Select OK if you'd like to include lowercase l
 
 const passwordOptions = {
   input: input,
-  confirmNumber: confirmNum,
+  confirmNum: confirmNum,
   confirmUppercase: confirmUppercase,
   confirmLowercase: confirmLowercase, 
-  confirmCharacter:confirmChar
+  confirmChar:confirmChar
   };
 
- 
+ let choices = [];
+
+ if (passwordOptions.confirmNum === true) {
+  choices =choices.concat(numberChars);
+  }
+  
+  if (passwordOptions.confirmUppercase === true) {
+    choices =choices.concat(upperCasedChars);
+  }
+  
+  
+  if (passwordOptions.confirmLowercase === true) {
+      choices =choices.concat(lowerCasedChars);
+  }
+  
+  
+  if (passwordOptions.confirmChar === true) {
+      choices =choices.concat(specialChars);
+    }
 
 
 
