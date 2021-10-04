@@ -47,9 +47,11 @@ if (input > 128) {
 
 }
 
-const confirmNum = confirm("Select OK if you'd like to include numbers");
+const confirmNum = confirm("Select OK if you'd like to include numbers in your password.");
+const confirmChar = confirm("Select OK if you'd like to include special characters in your password.");
 
 
+ 
 
 
 
