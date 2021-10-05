@@ -57,7 +57,7 @@ if (confirmNum === false  && confirmChar===false && confirmUppercase === false &
 }
 
 
-let passwordOptions = {
+const passwordOptions = {
   input: input,
   confirmNum: confirmNum,
   confirmUppercase: confirmUppercase,
