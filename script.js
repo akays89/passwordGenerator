@@ -15,7 +15,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   let password = generatePassword();
-  const passwordText = document.querySelector("#password");
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
@@ -32,7 +32,7 @@ let input = parseInt(prompt("Please enter your desired password length. The pass
 
 if (isNaN(input === true)) {
   alert("Value must be a number!");
-  return
+  return;
 }
  if (input < 8) {
    alert("The password must be at least 8 characters!")
@@ -45,12 +45,17 @@ if (input > 128) {
 }
 
 
-}
+
 
 const confirmNum = confirm("Select OK if you'd like to include numbers in your password.");
 const confirmChar = confirm("Select OK if you'd like to include special characters in your password.");
 const confirmUppercase = confirm("Select OK if you'd like to include uppercase letters in your password.");
 const confirmLowercase = confirm("Select OK if you'd like to include lowercase letters in your password.");
+
+if (confirmNum === false  && confirmChar===false && confirmUppercase === false && confirmLowercase === false) {
+  alert("You must select at least one criteria"); 
+  return; 
+}
 
 
 const passwordOptions = {
@@ -86,6 +91,10 @@ const passwordOptions = {
       password.push(randoChoices);
       
      }
+
+     return password.join('');
+    }
+
 
 
 
